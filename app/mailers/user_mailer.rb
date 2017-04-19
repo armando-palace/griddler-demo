@@ -16,4 +16,9 @@ class UserMailer < ApplicationMailer
     sendgrid_disable :ganalytics
     mail :to => user.email, :subject => "Fare thee well :-("
   end
+
+  def new_record_notification(record)
+    @record = record
+    mail to: "postmaster@sandbox4e9c4fd2237d49848f9e34f758a3963d.mailgun.org", subject: "Success! You did it"
+  end
 end
